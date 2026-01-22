@@ -2,95 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 150 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 150 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 150 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 142 64% 24%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 145 30% 96%;
+    --secondary-foreground: 142 64% 24%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 150 20% 96%;
+    --muted-foreground: 150 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 201 80% 40%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 150 15% 90%;
+    --input: 150 15% 90%;
+    --ring: 142 64% 24%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom village theme colors */
+    --village-green-50: 145 60% 97%;
+    --village-green-100: 145 55% 92%;
+    --village-green-200: 145 50% 82%;
+    --village-green-500: 142 64% 35%;
+    --village-green-600: 142 64% 24%;
+    --village-green-700: 142 60% 18%;
+    --village-green-800: 142 55% 12%;
+    
+    --village-blue-50: 201 80% 97%;
+    --village-blue-100: 201 75% 90%;
+    --village-blue-500: 201 80% 40%;
+    --village-blue-600: 201 85% 32%;
+    
+    --village-earth-50: 35 40% 96%;
+    --village-earth-100: 35 35% 88%;
+    --village-earth-500: 35 45% 45%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142 64% 24%) 0%, hsl(142 60% 18%) 50%, hsl(201 80% 32%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(145 30% 98%) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsla(142 64% 12% / 0.7) 0%, hsla(142 64% 8% / 0.9) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsla(150 10% 15% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsla(150 10% 15% / 0.1);
+    --shadow-elevated: 0 20px 50px -12px hsla(150 10% 15% / 0.15);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 142 30% 6%;
+    --foreground: 145 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 142 25% 10%;
+    --card-foreground: 145 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 142 25% 10%;
+    --popover-foreground: 145 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 142 50% 45%;
+    --primary-foreground: 142 55% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 142 20% 15%;
+    --secondary-foreground: 145 20% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 142 20% 15%;
+    --muted-foreground: 145 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 201 70% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 142 20% 18%;
+    --input: 142 20% 18%;
+    --ring: 142 50% 45%;
   }
 }
 
@@ -99,7 +101,116 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+  }
+
+  .container-village {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .card-village {
+    @apply bg-card rounded-xl border border-border shadow-[var(--shadow-card)] transition-all duration-300;
+  }
+
+  .card-village:hover {
+    @apply shadow-[var(--shadow-elevated)] -translate-y-1;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:opacity-90 hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
+  }
+
+  .section-title {
+    @apply text-3xl lg:text-4xl font-bold text-foreground mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-muted-foreground max-w-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  .hover-glow {
+    @apply transition-shadow duration-300 hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.3)];
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
   }
 }
